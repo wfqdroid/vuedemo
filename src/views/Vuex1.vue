@@ -1,17 +1,30 @@
 <template>
     <div>
-        <div>name:{{$store.state.userInfo.name}}</div>
-        <el-button type="primary" size="small" @click="$store.dispatch('getUserInfo')">获取用户信息</el-button>
+        <div>name:{{userInfo.name}}</div>
+        <el-button type="primary" size="small" @click="getInfo">获取用户信息</el-button>
     </div>
 </template>
 
 <script>
+    import {mapState,mapActions} from 'vuex'
     export default {
         name: "vuex1",
         data() {
             return {}
         },
-        methods: {},
+        computed:{
+            ...mapState('wfq/user',[
+                'userInfo'
+            ])
+        },
+        methods: {
+            ...mapActions('wfq/user',[
+                'getUserInfo'
+            ]),
+            getInfo(){
+                this.getUserInfo()
+            },
+        },
         mounted() {
         }
     }

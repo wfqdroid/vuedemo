@@ -138,6 +138,127 @@ export default new Vuex.Store({
 > 如果我们调用方法，页面上过度使用this.$store.***的话，会显得很累赘，上面三个函数便是Vuex给我们提供的函数，方便我们调用store里面的方法
 三个函数类似，下面我们以mapState和mapActions来讲解：
 
+首先记住一点，mapstate放在computed中，mapActions放在methods，记得导入mapState,mapActions，那么我们之前页面的代码可以改写如下：
+```$xslt
+<template>
+    <div>
+        <div>name:{{userInfo.name}}</div>
+        <el-button type="primary" size="small" @click="getInfo">获取用户信息</el-button>
+    </div>
+</template>
+
+<script>
+    import {mapState,mapActions} from 'vuex'
+    export default {
+        name: "vuex1",
+        data() {
+            return {}
+        },
+        computed:{
+            ...mapState([
+                'userInfo'
+            ])
+        },
+        methods: {
+            ...mapActions([
+                'getUserInfo'
+            ]),
+            getInfo(){
+            // 调用的方法是mapActions里面的getUserInfo
+                this.getUserInfo()
+            },
+        },
+        mounted() {
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>
+```
+### 思考一个问题：如果我们应用需要状态管理的数据过多的时候，只写在一个store里面的话就显得太累赘，怎么处理？
+> 在学习node.js的时候，如果我们知道，在app.js中可以直接使用router去写接口，那么如果接口过多的话，也就是我们的controller过多的时候，
+只现在app.js里面的话，代码累赘，那么我们是如何处理的？扫描一个文件夹下面所有的js的文件，然后一次注入，有点java上inject的意思，那么，我们对之前的代码解构以及
+代码进行相应的调整：
+
+这里我们使用了Vuex的modules，以及namespaced属性，modules允许我们以modules的形式导出多个store,namespaced:true的话怎代表
+我们访问store里面的方法时要在对应的命名空间下
+
+首先我们在src下面新建文件夹store,新建index.js文件，注意：别忘了在main.js里面把路径替换，现在的路径如下：
+    import store from './store/index'，那么之前的store.js便没有用了，我们可以直接删除
+具体的扫描文件下面的js文件等通用代码，可在github代码中查看。修改后的代码如下：
+ ```$xslt
+user.js:// 针对user的store
+
+export default {
+    namespaced: true,
+    state: {
+        userInfo: {}
+    },
+    // 同步操作最好放在这里
+    // mutations: {
+    //     setUserInfo(state, userinfo) {
+    //         state.userinfo = userinfo
+    //     }
+    // },
+    // 异步操作最好放在这里
+    actions: {
+        getUserInfo({state}) {
+            setTimeout(() => {
+                let userinfo = {
+                    name: 'wfq',
+                    age: '26'
+                }
+                state.userInfo = userinfo
+                // commit('setUserInfo', userinfo)
+            }, 2000)
+        }
+    }
+}
+```
+我们页面的代码：
+```$xslt
+<template>
+    <div>
+        <div>name:{{userInfo.name}}</div>
+        <el-button type="primary" size="small" @click="getInfo">获取用户信息</el-button>
+    </div>
+</template>
+
+<script>
+    import {mapState,mapActions} from 'vuex'
+    export default {
+        name: "vuex1",
+        data() {
+            return {}
+        },
+        computed:{
+            ...mapState('wfq/user',[
+                'userInfo'
+            ])
+        },
+        methods: {
+            ...mapActions('wfq/user',[
+                'getUserInfo'
+            ]),
+            getInfo(){
+                this.getUserInfo()
+            },
+        },
+        mounted() {
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>
+```
+注意与直接使用store,js文件的不同，使用modules修改后，mapState和mapActions要在第一个参数加上路径,'wfq/user',这也就证明了namespaced的作用
+
+
+
 
 
 
