@@ -52,7 +52,7 @@
                         path: '/JIRAList'
                     },
                     {
-                        label: '关联',
+                        label: '关联JRIA',
                         path: '/guanlian'
                     },
                     {
