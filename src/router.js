@@ -72,6 +72,11 @@ export default new Router({
             path: '/guanlian',
             name: 'guanlian',
             component: () => import('./views/guanlian.vue')
+        },
+        {
+            path: '/demo1',
+            name: 'demo1',
+            component: () => import('./views/Demo1.vue')
         }
     ]
 })

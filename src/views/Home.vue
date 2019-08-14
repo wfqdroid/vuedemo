@@ -54,6 +54,10 @@
                     {
                         label: '关联',
                         path: '/guanlian'
+                    },
+                    {
+                        label: 'DEMO1',
+                        path: '/demo1'
                     }
                 ]
             }
