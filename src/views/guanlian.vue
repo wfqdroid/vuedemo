@@ -9,7 +9,7 @@
 
         <div style="padding-top: 80px;">
 
-
+            <span>版本1.1.2</span>
 
             <div class="flex box_center_v mt_20" style="padding: 0 30px;">
                 <el-input size="mini" placeholder="请输入JIRA单号/关键词" style="width: 300px;margin-right: 20px;"></el-input>
