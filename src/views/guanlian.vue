@@ -1,9 +1,10 @@
 <template>
     <div >
         <div class="top_back">
-            <span class="top_back_title">关联JIRA单</span>
+            <span class="top_back_title">关联</span>
         </div>
 
+        <span>增加v1分支</span>
 
 
 
