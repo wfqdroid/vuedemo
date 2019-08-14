@@ -9,7 +9,8 @@
 
         <div style="padding-top: 80px;">
 
-            <span>删除版本1.1.2的代码，增加主分支的代码</span>
+
+            <span>删除主分支的代码，增加1.1.3的代码</span>
 
             <div class="flex box_center_v mt_20" style="padding: 0 30px;">
                 <el-input size="mini" placeholder="请输入JIRA单号/关键词" style="width: 300px;margin-right: 20px;"></el-input>
