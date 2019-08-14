@@ -1,0 +1,2 @@
+Vue.js 的组件渲染顺序是由内而外的
+created 要先于 mounted

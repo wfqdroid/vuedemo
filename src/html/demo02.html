@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo02</title>
+</head>
+<body>
+<div>
+    <h2>Demo02网页测试</h2>
+    <button type="button" id="button1" onclick="callAndroid()">callAndroid_注解</button>
+
+    <button type="button" id="button2" onclick="callAndroid2()" style="width: 100px;height: 80px;">callAndroid_协议</button>
+
+</div>
+<script type="text/javascript">
+
+    function callJs(name){
+        alert(`Android 调用了js代码`)
+        return {name:'wfq',age:26}
+    }
+    function callAndroid() {
+        test.hello("js调用了android中的hello方法::WFQ");
+    }
+    function callAndroid2() {
+        document.location = "js://webview?arg1=111&arg2=222";
+    }
+
+</script>
+</body>
+</html>

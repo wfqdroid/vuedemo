@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var obj = {name: "wangfuqiang"}
+
+    function fn(num1, num2) {
+        console.log(this)
+        console.log(num1 + num2)
+    }
+
+    // fn(100,200); //this->window num1->100,num2->200
+    // fn.call(100,200) //this->100,num1->200,num2->undefined 相加后的结果NaN
+    // fn.call(obj,100,200) //this->obj,num1->100,num2->200
+    fn.apply(obj, [100, 200]) //this->obj,num1->100,num2->200
+
+
+    // 猫吃鱼，狗吃肉，奥特曼打小怪兽。
+    // 有天狗想吃鱼了
+    // 猫.吃鱼.call(狗，鱼)
+    // 狗就吃到鱼了
+    // 猫成精了，想打怪兽
+    // 奥特曼.打小怪兽.call(猫，小怪兽)
+    // 就这样记住了。
+    //
+    // 如果有一天猫不仅想吃肉，还想吃猪肉牛肉羊肉，那么：狗.吃肉.apply(猫, [猪肉, 牛肉, 羊肉])
+    // call也可以的，猫想吃猪肉牛肉羊肉可以
+    // 狗.吃肉.call(猫，猪肉，牛肉，羊肉)
+
+
+</script>
+</body>
+</html>

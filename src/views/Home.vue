@@ -1,18 +1,70 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+        <el-button v-for="item in mData" type="primary" style="margin-bottom: 20px;" @click="onBtnClick(item.path)">{{item.label}}</el-button>
+    </div>
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+    export default {
+        name: 'home',
+        data() {
+            return {
+                mData: [
+                    {
+                        label: 'vuex学习',
+                        path: '/vuex1'
+                    },
+                    {
+                        label: 'vuex简版1',
+                        path: '/vuex_simp1'
+                    },
+                    {
+                        label: '简单组件',
+                        path: '/simple-component'
+                    },
+                    {
+                        label: 'eventbustest',
+                        path: '/eventbustest'
+                    },
+                    {
+                        label: 'Provide和Injecttest',
+                        path: '/provideinjecttest'
+                    },
+                    {
+                        label: 'ToggleTest',
+                        path: '/toggletest'
+                    },
+                    {
+                        label: 'dispatchbroadcast',
+                        path: '/dispatchbroadcast'
+                    },
+                    {
+                        label: 'chart',
+                        path: '/chart'
+                    },
+                    {
+                        label: '保障单列表',
+                        path: '/Reportobstacle'
+                    },
+                    {
+                        label: 'JIRA单列表',
+                        path: '/JIRAList'
+                    },
+                    {
+                        label: '关联',
+                        path: '/guanlian'
+                    }
+                ]
+            }
+        },
+        methods: {
+            onBtnClick(path) {
+                this.$router.push({path: path})
+            }
+        },
+        mounted() {
+        }
 
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+    }
 </script>

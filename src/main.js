@@ -9,8 +9,18 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI)
 
-Vue.config.productionTip = false
+import lodash from 'lodash'
+Vue.prototype._ = lodash
 
+import HTTP from '@/common/httputils'
+Vue.prototype.http = HTTP;
+
+Vue.prototype.bus = new Vue()
+
+import VCharts from 'v-charts'
+Vue.use(VCharts)
+
+Vue.config.productionTip = false
 new Vue({
   router,
   store,
