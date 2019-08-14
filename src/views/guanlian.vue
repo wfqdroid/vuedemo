@@ -12,7 +12,6 @@
             <span>fenzhi-name-v1.2</span>
             <div>主分支2</div>
             <div>主分支3</div>
-            <div>fenzhi-age</div>
             <span>增加v1.2的代码啦</span>
 
             <div class="flex box_center_v mt_20" style="padding: 0 30px;">
