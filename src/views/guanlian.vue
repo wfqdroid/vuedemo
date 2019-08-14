@@ -9,10 +9,12 @@
 
         <div style="padding-top: 80px;">
 
-            <span>主分支1</span>
+            <span>fenzhi-name</span>
             <div>主分支2</div>
             <div>主分支3</div>
-            <div>主分支4</div>
+
+
+            <div>fenzhi-age</div>
 
             <div class="flex box_center_v mt_20" style="padding: 0 30px;">
                 <el-input size="mini" placeholder="请输入JIRA单号/关键词" style="width: 300px;margin-right: 20px;"></el-input>
