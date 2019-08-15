@@ -10,7 +10,7 @@
         },
         methods: {},
         mounted() {
-            let str = '第2次修改'
+            let str = '第3次修改'
         }
     }
 </script>
