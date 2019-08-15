@@ -10,7 +10,7 @@
         },
         methods: {},
         mounted() {
-            let res = '新加2'
+            let res = '新加3'
         }
     }
 </script>
