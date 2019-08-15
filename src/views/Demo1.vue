@@ -11,6 +11,7 @@
         methods: {},
         mounted() {
             let str = '第3次修改'
+            let v1 = '我是v1的内容'
         }
     }
 </script>
