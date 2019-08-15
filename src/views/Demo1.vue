@@ -10,7 +10,7 @@
         },
         methods: {},
         mounted() {
-            let str = '新的内容'
+            let str = '新的内容2'
         }
     }
 </script>
