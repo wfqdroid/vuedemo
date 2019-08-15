@@ -10,6 +10,7 @@
         },
         methods: {},
         mounted() {
+            let jj = ''
             let str = '加1'
         }
     }
