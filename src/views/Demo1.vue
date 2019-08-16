@@ -11,6 +11,7 @@
         methods: {},
         mounted() {
             let res = '新加2'
+            console.error('新加2')
         }
     }
 </script>
