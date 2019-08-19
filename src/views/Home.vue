@@ -54,6 +54,14 @@
                     {
                         label: '关联JRIA',
                         path: '/guanlian'
+                    },
+                    {
+                        label: 'DEMO1',
+                        path: '/demo1'
+                    },
+                    {
+                        label: 'DEMO2',
+                        path: '/demo2'
                     }
                 ]
             }

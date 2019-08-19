@@ -155,12 +155,13 @@ export default new Vuex.Store({
             return {}
         },
         computed:{
+        // 这里的mapState对应store.js里面的state,参数是个数组，里面的元素其实就是store.js里面的state里面的数据
             ...mapState([
                 'userInfo'
             ])
         },
         methods: {
-            ...mapActions([
+        // 这里的mapActions对应的是store.js里面的actions，参数是个数组，里面的元素其实就是store.js里面的actions里面的方法            ...mapActions([
                 'getUserInfo'
             ]),
             getInfo(){

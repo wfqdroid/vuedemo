@@ -22,7 +22,6 @@
 
         computed: {
             count() {
-
                 return store.count
             }
         },
