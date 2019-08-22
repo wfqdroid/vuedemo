@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-button v-for="item in mData" type="primary" style="margin-bottom: 20px;" @click="onBtnClick(item.path)">{{item.label}}</el-button>
+        <el-button v-for="item in mData"  v-bind:key="item.path" type="primary" style="margin-bottom: 20px;" @click="onBtnClick(item.path)">{{item.label}}</el-button>
     </div>
 
 </template>
@@ -62,6 +62,10 @@
                     {
                         label: 'DEMO2',
                         path: '/demo2'
+                    },
+                    {
+                        label: 'DEMO3',
+                        path: '/demo3'
                     }
                 ]
             }

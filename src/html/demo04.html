@@ -7,21 +7,17 @@
 <body>
 
 <script type="text/javascript">
-    let data = ""
 
-    if(!/^[0-9].*$/.test(data)){
-        console.error('数据异常')
-    }else{
-        console.error('data is: ' + data)
+    // 10.8
+
+    // 14.4
+    var roomTypeCommition = function (commissionPercent,hotelCommissionRate) {
+
+        return Math.ceil(hotelCommissionRate * commissionPercent) || 0
     }
 
-    function vv() {
-        console.error('我是分支v1.2')
-    }
+    console.error(roomTypeCommition(18,0.8))
 
-    function vvvv() {
-        console.error('我是分支v1.2vvvv')
-    }
 
 </script>
 
